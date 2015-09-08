@@ -1,3 +1,17 @@
 body{
   background-color: lavender;
+  text-align: center;
+}
+
+h1 {
+  background-color: black;
+  color: white;
+}
+
+iframe{
+  margin: 20px;
+}
+
+div {
+  text-align: center;
 }
