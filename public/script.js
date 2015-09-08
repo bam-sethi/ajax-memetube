@@ -5,8 +5,8 @@ $(document).ready(function(){
   getVideos();
 
 
-//event listener
-$('#submit').on('click', addVideo)
+//event listener for submit button
+$('#submit').on('click', addVideo);
 
 
 
@@ -14,14 +14,15 @@ $('#submit').on('click', addVideo)
 
 // Add a video
 function addVideo(event){
-  console.log('meeeemmmmee');
-  video = {link: $('#link').val(), title: $('#title').val() };
-  debugger;
+  // console.log('meeeemmmmee');
+  video = {link: $('#link').val(), title: $('#title').val(), description: $('#description').val() };
+  // debugger;
   $.post('/videos', video, function(response){
     console.log(response);
     appendNewVideo(response);
     $('#link').val('');
     $('#title').val('');
+    $('#description').val('');
   })
 }
 
@@ -45,7 +46,7 @@ function getVideos(){
 
 function appendNewVideo(video) {
   //add this video to the div memetube ajax
-  $('<iframe width="460" height="315" src="'+  video.link  +'" frameborder="0" allowfullscreen></iframe>').appendTo('#videos-ajax')
+  $('<h3>' + video.title + '</h3>' +'<iframe width="460" height="315" src="'+  video.link  +'" frameborder="0" allowfullscreen></iframe>' + '<p>'+ video.description +'</p>').appendTo('#videos-ajax')
 };
 
 

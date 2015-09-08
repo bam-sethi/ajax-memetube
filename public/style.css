@@ -9,9 +9,14 @@ h1 {
 }
 
 iframe{
-  margin: 20px;
+  margin: 10px;
 }
 
 div {
   text-align: center;
+}
+
+#videos-ajax {
+  margin: 20px;
+
 }
